@@ -1,72 +1,700 @@
-```json
-{
-  "files": {
-    "package.json": {
-      "name": "onlymakeai",
-      "version": "0.1.0",
-      "private": true,
-      "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "start": "next start",
-        "lint": "next lint"
-      },
-      "dependencies": {
-        "next": "14.1.0",
-        "react": "^18.2.0",
-        "react-dom": "^18.2.0",
-        "lucide-react": "^0.312.0"
-      },
-      "devDependencies": {
-        "@types/node": "^20.11.5",
-        "@types/react": "^18.2.48",
-        "@types/react-dom": "^18.2.18",
-        "autoprefixer": "^10.4.17",
-        "eslint": "^8.56.0",
-        "eslint-config-next": "14.1.0",
-        "postcss": "^8.4.33",
-        "tailwindcss": "^3.4.1",
-        "typescript": "^5.3.3"
+# OnlyMakeAI
+
+<div align="center">
+  <h3>🤖 AI-Powered Content Creation & Management Platform</h3>
+  <p>Create, manage, and monetize AI-generated content with powerful automation tools</p>
+
+  [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+  [![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue.svg)](https://www.typescriptlang.org/)
+  [![Next.js](https://img.shields.io/badge/Next.js-14-black.svg)](https://nextjs.org/)
+  [![Supabase](https://img.shields.io/badge/Supabase-Latest-green.svg)](https://supabase.com/)
+</div>
+
+---
+
+## 📋 Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+- [Tech Stack](#tech-stack)
+- [Prerequisites](#prerequisites)
+- [Installation](#installation)
+- [Configuration](#configuration)
+- [Usage](#usage)
+- [Project Structure](#project-structure)
+- [API Documentation](#api-documentation)
+- [Development](#development)
+- [Deployment](#deployment)
+- [Contributing](#contributing)
+- [License](#license)
+
+---
+
+## 🎯 Overview
+
+OnlyMakeAI is a comprehensive platform for creating, managing, and monetizing AI-generated content. Built with modern web technologies, it provides a seamless experience for content creators, businesses, and developers looking to leverage AI capabilities.
+
+### Key Capabilities
+
+- **AI Content Generation**: Generate high-quality text, images, and multimedia content
+- **Workflow Automation**: Create custom workflows with visual node-based editor
+- **Multi-Model Support**: Integrate with multiple AI providers (OpenAI, Anthropic, Google, etc.)
+- **Team Collaboration**: Share projects and collaborate in real-time
+- **Analytics & Insights**: Track usage, performance, and content metrics
+- **Monetization Tools**: Built-in payment processing and subscription management
+
+---
+
+## ✨ Features
+
+### 🎨 Content Creation
+- **Text Generation**: Blog posts, articles, social media content, and more
+- **Image Generation**: AI-powered image creation with multiple style options
+- **Code Generation**: Generate and explain code in multiple programming languages
+- **Audio/Video**: Text-to-speech and basic video generation capabilities
+
+### 🔧 Workflow Builder
+- **Visual Editor**: Drag-and-drop interface for building AI workflows
+- **Pre-built Templates**: Ready-to-use templates for common use cases
+- **Custom Nodes**: Create your own nodes with custom logic
+- **Conditional Logic**: Add branching and decision-making to workflows
+- **API Integration**: Connect to external services and APIs
+
+### 👥 Team & Collaboration
+- **Multi-user Support**: Invite team members with role-based access control
+- **Project Sharing**: Share projects and templates with team members
+- **Version Control**: Track changes and roll back to previous versions
+- **Comments & Feedback**: Collaborate with inline comments
+
+### 📊 Analytics & Monitoring
+- **Usage Dashboard**: Track API usage, costs, and performance
+- **Content Analytics**: Monitor content performance and engagement
+- **Error Tracking**: Built-in error monitoring and debugging tools
+- **Custom Reports**: Generate custom reports and export data
+
+### 💰 Monetization
+- **Subscription Plans**: Flexible pricing tiers for different user types
+- **Usage-based Billing**: Pay-as-you-go pricing for API usage
+- **Payment Integration**: Stripe integration for secure payments
+- **API Marketplace**: Sell and distribute your workflows
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- **Framework**: [Next.js 14](https://nextjs.org/) (App Router)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
+- **UI Components**: [Radix UI](https://www.radix-ui.com/)
+- **State Management**: [Zustand](https://zustand-demo.pmnd.rs/)
+- **Forms**: [React Hook Form](https://react-hook-form.com/)
+- **Validation**: [Zod](https://zod.dev/)
+
+### Backend
+- **Database**: [Supabase](https://supabase.com/) (PostgreSQL)
+- **Authentication**: Supabase Auth
+- **Storage**: Supabase Storage
+- **API**: Next.js API Routes
+- **Real-time**: Supabase Realtime
+
+### AI & ML
+- **OpenAI**: GPT-4, DALL-E 3
+- **Anthropic**: Claude 3
+- **Google**: Gemini Pro
+- **Stability AI**: Stable Diffusion
+
+### DevOps
+- **Hosting**: [Vercel](https://vercel.com/)
+- **CI/CD**: GitHub Actions
+- **Monitoring**: Vercel Analytics
+- **Error Tracking**: Sentry (optional)
+
+---
+
+## 📦 Prerequisites
+
+Before you begin, ensure you have the following installed:
+
+- **Node.js**: >= 18.17.0 ([Download](https://nodejs.org/))
+- **npm**: >= 9.0.0 or **yarn**: >= 1.22.0 or **pnpm**: >= 8.0.0
+- **Git**: Latest version ([Download](https://git-scm.com/))
+- **Supabase CLI**: Optional but recommended ([Install](https://supabase.com/docs/guides/cli))
+
+### Required Accounts
+
+- **Supabase**: [Sign up](https://supabase.com/) for a free account
+- **OpenAI**: [Get API key](https://platform.openai.com/)
+- **Stripe**: [Create account](https://stripe.com/) (for payments)
+- **Vercel**: [Sign up](https://vercel.com/) (for deployment)
+
+---
+
+## 🚀 Installation
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/onlymakeai/onlymakeai.git
+cd onlymakeai
+```
+
+### 2. Install Dependencies
+
+Using npm:
+```bash
+npm install
+```
+
+Using yarn:
+```bash
+yarn install
+```
+
+Using pnpm:
+```bash
+pnpm install
+```
+
+### 3. Set Up Environment Variables
+
+Copy the example environment file:
+
+```bash
+cp .env.example .env.local
+```
+
+Edit `.env.local` and add your configuration:
+
+```env
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=your_supabase_url
+NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+
+# AI Providers
+OPENAI_API_KEY=your_openai_api_key
+ANTHROPIC_API_KEY=your_anthropic_api_key
+GOOGLE_AI_API_KEY=your_google_ai_api_key
+
+# Stripe (Optional)
+STRIPE_SECRET_KEY=your_stripe_secret_key
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY=your_stripe_publishable_key
+STRIPE_WEBHOOK_SECRET=your_stripe_webhook_secret
+
+# App Configuration
+NEXT_PUBLIC_APP_URL=http://localhost:3000
+NEXT_PUBLIC_API_URL=http://localhost:3000/api
+```
+
+### 4. Set Up Database
+
+Run the database migrations:
+
+```bash
+# If using Supabase CLI
+supabase db reset
+
+# Or manually run the SQL files in /supabase/migrations
+```
+
+### 5. Start Development Server
+
+```bash
+npm run dev
+```
+
+The application will be available at `http://localhost:3000`
+
+---
+
+## ⚙️ Configuration
+
+### Database Schema
+
+The application uses the following main tables:
+
+- `users`: User profiles and authentication
+- `projects`: User projects and workspaces
+- `workflows`: AI workflow configurations
+- `generations`: AI generation history
+- `subscriptions`: User subscription data
+- `api_keys`: User API key management
+
+### AI Provider Configuration
+
+Configure AI providers in the dashboard:
+
+1. Navigate to **Settings** > **AI Providers**
+2. Add your API keys for each provider
+3. Configure model preferences and defaults
+4. Set usage limits and quotas
+
+### Supabase Setup
+
+1. Create a new Supabase project
+2. Run the SQL migrations from `/supabase/migrations`
+3. Configure Row Level Security (RLS) policies
+4. Set up Storage buckets for file uploads
+5. Configure authentication providers (Email, OAuth, etc.)
+
+---
+
+## 📖 Usage
+
+### Creating Your First Project
+
+1. **Sign Up**: Create an account at `/signup`
+2. **Create Project**: Click "New Project" from the dashboard
+3. **Configure**: Set project name, description, and settings
+4. **Start Creating**: Begin generating content or building workflows
+
+### Generating Content
+
+#### Text Generation
+
+```typescript
+import { generateText } from '@/lib/ai/text-generation';
+
+const result = await generateText({
+  prompt: 'Write a blog post about AI',
+  model: 'gpt-4-turbo',
+  maxTokens: 1000,
+  temperature: 0.7
+});
+
+console.log(result.text);
+```
+
+#### Image Generation
+
+```typescript
+import { generateImage } from '@/lib/ai/image-generation';
+
+const result = await generateImage({
+  prompt: 'A futuristic city at sunset',
+  model: 'dall-e-3',
+  size: '1024x1024',
+  quality: 'hd'
+});
+
+console.log(result.imageUrl);
+```
+
+### Building Workflows
+
+1. Navigate to **Workflows** > **New Workflow**
+2. Drag nodes from the sidebar to the canvas
+3. Connect nodes to create your workflow logic
+4. Configure each node's parameters
+5. Test and deploy your workflow
+
+#### Example Workflow: Blog Post Generator
+
+```typescript
+// workflow.config.ts
+export const blogPostWorkflow = {
+  name: 'Blog Post Generator',
+  nodes: [
+    {
+      id: 'input',
+      type: 'input',
+      data: { field: 'topic' }
+    },
+    {
+      id: 'research',
+      type: 'ai-text',
+      data: {
+        prompt: 'Research and outline: {{input.topic}}',
+        model: 'gpt-4'
       }
     },
-    "tsconfig.json": {
-      "compilerOptions": {
-        "target": "ES2017",
-        "lib": ["dom", "dom.iterable", "esnext"],
-        "allowJs": true,
-        "skipLibCheck": true,
-        "strict": true,
-        "noEmit": true,
-        "esModuleInterop": true,
-        "module": "esnext",
-        "moduleResolution": "bundler",
-        "resolveJsonModule": true,
-        "isolatedModules": true,
-        "jsx": "preserve",
-        "incremental": true,
-        "plugins": [
-          {
-            "name": "next"
-          }
-        ],
-        "paths": {
-          "@/*": ["./src/*"]
-        }
-      },
-      "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-      "exclude": ["node_modules"]
+    {
+      id: 'write',
+      type: 'ai-text',
+      data: {
+        prompt: 'Write a blog post based on: {{research.output}}',
+        model: 'gpt-4-turbo'
+      }
     },
-    "tailwind.config.ts": "import type { Config } from 'tailwindcss'\n\nconst config: Config = {\n  content: [\n    './src/pages/**/*.{js,ts,jsx,tsx,mdx}',\n    './src/components/**/*.{js,ts,jsx,tsx,mdx}',\n    './src/app/**/*.{js,ts,jsx,tsx,mdx}',\n  ],\n  theme: {\n    extend: {\n      colors: {\n        primary: {\n          50: '#f0f9ff',\n          100: '#e0f2fe',\n          200: '#bae6fd',\n          300: '#7dd3fc',\n          400: '#38bdf8',\n          500: '#0ea5e9',\n          600: '#0284c7',\n          700: '#0369a1',\n          800: '#075985',\n          900: '#0c4a6e',\n        },\n      },\n      animation: {\n        'fade-in': 'fadeIn 0.6s ease-in-out',\n        'slide-up': 'slideUp 0.6s ease-out',\n        'float': 'float 3s ease-in-out infinite',\n      },\n      keyframes: {\n        fadeIn: {\n          '0%': { opacity: '0' },\n          '100%': { opacity: '1' },\n        },\n        slideUp: {\n          '0%': { transform: 'translateY(20px)', opacity: '0' },\n          '100%': { transform: 'translateY(0)', opacity: '1' },\n        },\n        float: {\n          '0%, 100%': { transform: 'translateY(0px)' },\n          '50%': { transform: 'translateY(-20px)' },\n        },\n      },\n    },\n  },\n  plugins: [],\n}\nexport default config",
-    "postcss.config.js": "module.exports = {\n  plugins: {\n    tailwindcss: {},\n    autoprefixer: {},\n  },\n}",
-    "next.config.js": "/** @type {import('next').NextConfig} */\nconst nextConfig = {\n  reactStrictMode: true,\n}\n\nmodule.exports = nextConfig",
-    ".eslintrc.json": "{\n  \"extends\": \"next/core-web-vitals\"\n}",
-    ".gitignore": "# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.\n\n# dependencies\n/node_modules\n/.pnp\n.pnp.js\n\n# testing\n/coverage\n\n# next.js\n/.next/\n/out/\n\n# production\n/build\n\n# misc\n.DS_Store\n*.pem\n\n# debug\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n\n# local env files\n.env*.local\n\n# vercel\n.vercel\n\n# typescript\n*.tsbuildinfo\nnext-env.d.ts",
-    "README.md": "# OnlyMakeAI Landing Page\n\nA modern, responsive landing page built with Next.js 14, TypeScript, and Tailwind CSS.\n\n## Features\n\n- ⚡ **Next.js 14** with App Router\n- 🎨 **Tailwind CSS** for styling\n- 📱 **Fully Responsive** design\n- ♿ **Accessible** components\n- 🎭 **Smooth Animations** and transitions\n- 🚀 **Performance Optimized**\n- 📦 **TypeScript** for type safety\n- 🎯 **SEO Ready** with metadata\n\n## Getting Started\n\n### Prerequisites\n\n- Node.js 18+ \n- npm, yarn, or pnpm\n\n### Installation\n\n```bash\n# Install dependencies\nnpm install\n# or\nyarn install\n# or\npnpm install\n```\n\n### Development\n\n```bash\n# Run development server\nnpm run dev\n# or\nyarn dev\n# or\npnpm dev\n```\n\nOpen [http://localhost:3000](http://localhost:3000) to view the landing page.\n\n### Build\n\n```bash\n# Create production build\nnpm run build\n# or\nyarn build\n# or\npnpm build\n```\n\n### Start Production Server\n\n```bash\n# Start production server\nnpm start\n# or\nyarn start\n# or\npnpm start\n```\n\n## Project Structure\n\n```\nonlymakeai/\n├── src/\n│   ├── app/\n│   │   ├── layout.tsx       # Root layout\n│   │   ├── page.tsx         # Home page\n│   │   └── globals.css      # Global styles\n│   └── components/\n│       ├── Hero.tsx         # Hero section\n│       ├── Features.tsx     # Features section\n│       ├── CTA.tsx          # Call-to-action section\n│       ├── Footer.tsx       # Footer component\n│       └── Navbar.tsx       # Navigation bar\n├── public/                  # Static assets\n├── tailwind.config.ts       # Tailwind configuration\n├── tsconfig.json           # TypeScript configuration\n└── package.json            # Dependencies\n```\n\n## Customization\n\n### Colors\n\nEdit `tailwind.config.ts` to customize the color palette:\n\n```typescript\ncolors: {\n  primary: {\n    // Your custom colors\n  },\n}\n```\n\n### Content\n\nEdit the components in `src/components/` to customize:\n- Hero section text and CTA\n- Feature descriptions\n- Footer links and information\n\n### Styling\n\nAll components use Tailwind CSS utility classes. Modify the classes in each component to adjust styling.\n\n## Deployment\n\n### Vercel (Recommended)\n\n[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/onlymakeai/onlymakeai)\n\n### Other Platforms\n\nThe app can be deployed to any platform that supports Next.js:\n- Netlify\n- AWS Amplify\n- Railway\n- Render\n\n## Technologies Used\n\n- **Next.js 14** - React framework\n- **TypeScript** - Type safety\n- **Tailwind CSS** - Utility-first CSS\n- **Lucide React** - Icon library\n\n## License\n\nMIT License - feel free to use this project for your own purposes.\n\n## Contributing\n\nContributions are welcome! Please feel free to submit a Pull Request.\n\n## Support\n\nFor support, please open an issue in the GitHub repository.",
-    "src/app/layout.tsx": "import type { Metadata } from 'next'\nimport { Inter } from 'next/font/google'\nimport './globals.css'\n\nconst inter = Inter({ subsets: ['latin'] })\n\nexport const metadata: Metadata = {\n  title: 'OnlyMakeAI - Create Amazing AI Solutions',\n  description: 'Build the future with cutting-edge AI technology. Fast, reliable, and innovative solutions for your business.',\n  keywords: ['AI', 'Artificial Intelligence', 'Machine Learning', 'Technology', 'Innovation'],\n  authors: [{ name: 'OnlyMakeAI' }],\n  openGraph: {\n    title: 'OnlyMakeAI - Create Amazing AI Solutions',\n    description: 'Build the future with cutting-edge AI technology',\n    type: 'website',\n  },\n}\n\nexport default function RootLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return (\n    <html lang=\"en\" className=\"scroll-smooth\">\n      <body className={inter.className}>{children}</body>\n    </html>\n  )\n}",
-    "src/app/page.tsx": "import Navbar from '@/components/Navbar'\nimport Hero from '@/components/Hero'\nimport Features from '@/components/Features'\nimport CTA from '@/components/CTA'\nimport Footer from '@/components/Footer'\n\nexport default function Home() {\n  return (\n    <main className=\"min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50\">\n      <Navbar />\n      <Hero />\n      <Features />\n      <CTA />\n      <Footer />\n    </main>\n  )\n}",
-    "src/app/globals.css": "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n@layer base {\n  html {\n    @apply antialiased;\n  }\n  \n  body {\n    @apply text-gray-900;\n  }\n}\n\n@layer utilities {\n  .text-balance {\n    text-wrap: balance;\n  }\n}",
-    "src/components/Navbar.tsx": "'use client'\n\nimport { useState, useEffect } from 'react'\nimport { Menu, X, Sparkles } from 'lucide-react'\n\nexport default function Navbar() {\n  const [isOpen, setIsOpen] = useState(false)\n  const [isScrolled, setIsScrolled] = useState(false)\n\n  useEffect(() => {\n    const handleScroll = () => {\n      setIsScrolled(window.scrollY > 10)\n    }\n    window.addEventListener('scroll', handleScroll)\n    return () => window.removeEventListener('scroll', handleScroll)\n  }, [])\n\n  const navLinks = [\n    { name: 'Features', href: '#features' },\n    { name: 'About', href: '#about' },\n    { name: 'Contact', href: '#contact' },\n  ]\n\n  return (\n    <nav\n      className={`fixed top-0 w-full z-50 transition-all duration-300 ${\n        isScrolled\n          ? 'bg-white/80 backdrop-blur-lg shadow-md'\n          : 'bg-transparent'\n      }`}\n    >\n      <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8\">\n        <div className=\"flex items-center justify-between h-16\">\n          {/* Logo */}\n          <div className=\"flex items-center space-x-2\">\n            <div className=\"bg-gradient-to-br from-blue-500 to-purple-600 p-2 rounded-lg\">\n              <Sparkles className=\"w-6 h-6 text-white\" />\n            </div>\n            <span className=\"text-xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent\">\n              OnlyMakeAI\n            </span>\n          </div>\n\n          {/* Desktop Navigation */}\n          <div className=\"hidden md:block\">\n            <div className=\"ml-10 flex items-center space-x-8\">\n              {navLinks.map((link) => (\n                <a\n                  key={link.name}\n                  href={link.href}\n                  className=\"text-gray-700 hover:text-blue-600 transition-colors duration-200 font-medium\"\n                >\n                  {link.name}\n                </a>\n              ))}\n              <button className=\"bg-gradient-to-r from-blue-600 to-purple-600 text-white px-6 py-2 rounded-lg font-medium hover:shadow-lg hover:scale-105 transition-all duration-200\">\n                Get Started\n              </button>\n            </div>\n          </div>\n\n          {/* Mobile menu button */}\n          <div className=\"md:hidden\">\n            <button\n              onClick={() => setIsOpen(!isOpen)}\n              className=\"text-gray-700 hover:text-blue-600 transition-colors\"\n            >\n              {isOpen ? <X className=\"w-6 h-6\" /> : <Menu className=\"w-6 h-6\" />}\n            </button>\n          </div>\n        </div>\n      </div>\n\n      {/* Mobile menu */}\n      {isOpen && (\n        <div className=\"md:hidden bg-white border-t border-gray-200 shadow-lg\">\n          <div className=\"px-2 pt-2 pb-3 space-y-1\">\n            {navLinks.map((link) => (\n              <a\n                key={link.name}\n                href={link.href}\n                className=\"block px-3 py-2 text-gray-700 hover:text-blue-600 hover:bg-gray-50 rounded-md transition-colors\"\n                onClick={() => setIsOpen(false)}\n              >\n                {link.name}\n              </a>\n            ))}\n            <button className=\"w-full text-left px-3 py-2 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-md font-medium hover:shadow-lg transition-all\">\n              Get Started\n            </button>\n          </div>\n        </div>\n      )}\n    </nav>\n  )\n}",
-    "src/components/Hero.tsx": "'use client'\n\nimport { ArrowRight, Sparkles, Zap, TrendingUp } from 'lucide-react'\n\nexport default function Hero() {\n  return (\n    <section className=\"relative pt-32 pb-20 px-4 sm:px-6 lg:px-8 overflow-hidden\">\n      {/* Animated background elements */}\n      <div className=\"absolute inset-0 overflow-hidden pointer-events-none\">\n        <div className=\"absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float\"></div>\n        <div className=\"absolute top-40 right-10 w-72 h-72 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float\" style={{ animationDelay: '2s' }}></div>\n        <div className=\"absolute -bottom-8 left-1/2 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-float\" style={{ animationDelay: '4s' }}></div>\n      </div>\n\n      <div className=\"max-w-7xl mx-auto relative\">\n        <div className=\"text-center\">\n          {/* Badge */}\n          <div className=\"inline-flex items-center space-x-2 bg-blue-50 border border-blue-200 rounded-full px-4 py-2 mb-8 animate-slide-up\">\n            <Sparkles className=\"w-4 h-4 text-blue-600\" />\n            <span className=\"text-sm font-medium text-blue-600\">\n              Powered by Advanced AI Technology\n            </span>\n          </div>\n\n          {/* Main heading */}\n          <h1 className=\"text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 animate-slide-up\" style={{ animationDelay: '0.1s' }}>\n            <span className=\"block text-gray-900 mb-2\">Create Amazing</span>\n            <span className=\"block bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 bg-clip-text text-transparent\">\n              AI Solutions\n            </span>\n          </h1>\n\n          {/* Subtitle */}\n          <p className=\"text-xl sm:text-2xl text-gray-600 mb-10 max-w-3xl mx-auto animate-slide-up\" style={{ animationDelay: '0.2s' }}>\n            Build the future with cutting-edge AI technology. Fast, reliable, and innovative solutions for your business.\n          </p>\n\n          {/* CTA Buttons */}\n          <div className=\"flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-slide-up\" style={{ animationDelay: '0.3s' }}>\n            <button className=\"group bg-gradient-to-r from-blue-600 to-purple-600 text-white px-8 py-4 rounded-lg font-semibold text-lg hover:shadow-2xl hover:scale-105 transition-all duration-200 flex items-center space-x-2\">\n              <span>Start Building Now</span>\n              <ArrowRight className=\"w-5 h-5 group-hover:translate-x-1 transition-transform\" />\n            </button>\n            <button className=\"bg-white text-gray-700 px-8 py-4 rounded-lg font-semibold text-lg border-2 border-gray-200 hover:border-blue-600 hover:text-blue-600 transition-all duration-200\">\n              View Demo\n            </button>\n          </div>\n\n          {/* Stats */}\n          <div className=\"grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-4xl mx-auto animate-fade-in\" style={{ animationDelay: '0.4s' }}>\n            <div className=\"flex flex-col items-center space-y-2\">\n              <div className=\"bg-blue-100 p-3 rounded-lg\">\n                <Zap className=\"w-6 h-6 text-blue-600\" />\n              </div>\n              <div className=\"text-3xl font-bold text-gray-900\">10x</div>\n              <div className=\"text-gray-600\">Faster Development</div>\n            </div>\n            <div className=\"flex flex-col items-center space-y-2\">\n              <div className=\"bg-purple-100 p-3 rounded-lg\">\n                <TrendingUp className=\"w-6 h-6 text-purple-600\" />\n              </div>\n              <div className=\"text-3xl font-bold text-gray-900\">99.9%</div>\n              <div className=\"text-gray-600\">Uptime Guarantee</div>\n            </div>\n            <div className=\"flex flex-col items-center space-y-2\">\n              <div className=\"bg-pink-100 p-3 rounded-lg\">\n                <Sparkles className=\"w-6 h-6 text-pink-600\" />\n              </div>\n              <div className=\"text-3xl font-bold text-gray-900\">50k+</div>\n              <div className=\"text-gray-600\">Happy Users</div>\n            </div>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}",
-    "src/components/Features.tsx": "'use client'\n\nimport { Brain, Zap, Shield, Users, Rocket, Code } from 'lucide-react'\n\nexport default function Features() {\n  const features = [\n    {\n      icon: Brain,\n      title: 'Advanced AI Models',\n      description: 'Leverage state-of-the-art machine learning models trained on vast datasets for superior performance.',\n      color: 'from-blue-500 to-cyan-500',\n    },\n    {\n      icon: Zap,\n      title: 'Lightning Fast',\n      description: 'Experience blazing-fast response times with our optimized infrastructure and efficient algorithms.',\n      color: 'from-yellow-500 to-orange-500',\n    },\n    {\n      icon: Shield,\n      title: 'Enterprise Security',\n      description: 'Bank-level encryption and security measures to keep your data safe and compliant with regulations.',\n      color: 'from-green-500 to-emerald-500',\n    },\n    {\n      icon: Users,\n      title: 'Collaborative Tools',\n      description: 'Work seamlessly with your team using built-in collaboration features and real-time updates.',\n      color: 'from-purple-500 to-pink-500',\n    },\n    {\n      icon: Rocket,\n      title: 'Easy Integration',\n      description: 'Simple APIs and SDKs for quick integration with your existing tools and workflows.',\n      color: 'from-red-500 to-rose-500',\n    },\n    {\n      icon: Code,\n      title: 'Developer Friendly',\n      description: 'Comprehensive documentation, code samples, and dedicated support for developers.',\n      color: 'from-indigo-500 to-blue-500',\n    },\n  ]\n\n  return (\n    <section id=\"features\" className=\"py-20 px-4 sm:px-6 lg:px-8\">\n      <div className=\"max-w-7xl mx-auto\">\n        {/* Section header */}\n        <div className=\"text-center mb-16\">\n          <h2 className=\"text-4xl sm:text-5xl font-bold text-gray-900 mb-4\">\n            Powerful Features\n          </h2>\n          <p className=\"text-xl text-gray-600 max-w-2xl mx-auto\">\n            Everything you need to build amazing AI-powered applications\n          </p>\n        </div>\n\n        {/* Features grid */}\n        <div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8\">\n          {features.map((feature, index) => {\n            const Icon = feature.icon\n            return (\n              <div\n                key={index}\n                className=\"group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border border-gray-100\"\n              >\n                <div className={`inline-flex p-3 rounded-xl bg-gradient-to-br ${feature.color} mb-5 group-hover:scale-110 transition-transform duration-300`}>\n                  <Icon className=\"w-6 h-6 text-white\" />\n                </div>\n                <h3 className=\"text-xl font-bold text-gray-900 mb-3\">\n                  {feature.title}\n                </h3>\n                <p className=\"text-gray-600 leading-relaxed\">\n                  {feature.description}\n                </p>\n              </div>\n            )\n          })}\n        </div>\n      </div>\n    </section>\n  )\n}",
-    "src/components/CTA.tsx": "'use client'\n\nimport { ArrowRight, Mail } from 'lucide-react'\nimport { useState } from 'react'\n\nexport default function CTA() {\n  const [email, setEmail] = useState('')\n\n  const handleSubmit = (e: React.FormEvent) => {\n    e.preventDefault()\n    // Handle email submission\n    console.log('Email submitted:', email)\n    setEmail('')\n  }\n\n  return (\n    <section className=\"py-20 px-4 sm:px-6 lg:px-8\">\n      <div className=\"max-w-7xl mx-auto\">\n        <div className=\"relative overflow-hidden bg-gradient-to-br from-blue-600 via-purple-600 to-pink-600 rounded-3xl shadow-2xl\">\n          {/* Background pattern */}\n          <div className=\"absolute inset-0 opacity-10\">\n            <div className=\"absolute top-0 left-0 w-full h-full\" style={{\n              backgroundImage: 'radial-gradient(circle at 2px 2px, white 1px, transparent 0)',\n              backgroundSize: '40px 40px'\n            }}></div>\n          </div>\n\n          <div className=\"relative px-8 py-16 sm:px-16 sm:py-24 text-center\">\n            <h2 className=\"text-4xl sm:text-5xl font-bold text-white mb-6\">\n              Ready to Get Started?\n            </h2>\n            <p className=\"text-xl text-blue-100 mb-10 max-w-2xl mx-auto\">\n              Join thousands of developers and businesses building the future with AI\n            </p>\n\n            {/* Email signup form */}\n            <form onSubmit={handleSubmit} className=\"max-w-md mx-auto\">\n              <div className=\"flex flex-col sm:flex-row gap-4\">\n                <div className=\"relative flex-1\">\n                  <Mail className=\"absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5 text-gray-400\" />\n                  <input\n                    type=\"email\"\n                    value={email}\n                    onChange={(e) => setEmail(e.target.value)}\n                    placeholder=\"Enter your email\"\n                    className=\"w-full pl-12 pr-4 py-4 rounded-lg text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-4 focus:ring-blue-300 transition-all\"\n                    required\n                  />\n                </div>\n                <button\n                  type=\"submit\"\n                  className=\"group bg-white text-blue-600 px-8 py-4 rounded-lg font-semibold hover:bg-gray-50 transition-all hover:scale-105 flex items-center justify-center space-x-2 whitespace-nowrap\"\n                >\n                  <span>Get Started</span>\n                  <ArrowRight className=\"w-5 h-5 group-hover:translate-x-1 transition-transform\" />\n                </button>\n              </div>\n            </form>\n\n            <p className=\"text-blue-100 text-sm mt-6\">\n              No credit card required • Free 14-day trial • Cancel anytime\n            </p>\n          </div>\n        </div>\n      </div>\n    </section>\n  )\n}",
-    "src/components/Footer.tsx": "'use client'\n\nimport { Sparkles, Github, Twitter, Linkedin, Mail } from 'lucide-react'\n\nexport default function Footer() {\n  const footerLinks = {\n    Product: [\n      { name: 'Features', href: '#features' },\n      { name: 'Pricing', href: '#pricing' },\n      { name: 'Documentation', href: '#docs' },\n      { name: 'API Reference', href: '#api' },\n    ],\n    Company: [\n      { name: 'About Us', href: '#about' },\n      { name: 'Blog', href: '#blog' },\n      { name: 'Careers', href: '#careers' },\n      { name: 'Contact', href: '#contact' },\n    ],\n    Resources: [\n      { name: 'Community', href: '#community' },\n      { name: 'Support', href: '#support' },\n      { name: 'Status', href: '#status' },\n      { name: 'Terms', href: '#terms' },\n    ],\n  }\n\n  const socialLinks = [\n    { icon: Github, href: 'https://github.com/onlymakeai', label: 'GitHub' },\n    { icon: Twitter, href: 'https://twitter.com', label: 'Twitter' },\n    { icon: Linkedin, href: 'https://linkedin.com', label: 'LinkedIn' },\n    { icon: Mail, href: 'mailto:hello@onlymakeai.com', label: 'Email' },\n  ]\n\n  return (\n    <footer id=\"contact\" className=\"bg-gray-900 text-gray-300\">\n      <div className=\"max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12\">\n        {/* Main footer content */}\n        <div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 mb-8\">\n          {/* Brand column */}\n          <div className=\"lg:col-span-2\">\n            <div className=\"flex items-center space-x-2 mb-4\">\n              <div className=\"bg-gradient-to-br from-blue-500 to-purple-600 p-2 rounded-lg\">\n                <Sparkles className=\"w-6 h-6 text-white\" />\n              </div>\n              <span className=\"text-xl font-bold text-white\">\n                OnlyMakeAI\n              </span>\n            </div>\n            <p className=\"text-gray-400 mb-6 max-w-sm\">\n              Building the future of AI-powered applications. Fast, reliable, and innovative solutions for modern businesses.\n            </p>\n            <div className=\"flex space-x-4\">\n              {socialLinks.map((social) => {\n                const Icon = social.icon\n                return (\n                  <a\n                    key={social.label}\n                    href={social.href}\n                    target=\"_blank\"\n                    rel=\"noopener noreferrer\"\n                    className=\"bg-gray-800 p-2 rounde
+    {
+      id: 'image',
+      type: 'ai-image',
+      data: {
+        prompt: 'Hero image for: {{input.topic}}',
+        model: 'dall-e-3'
+      }
+    },
+    {
+      id: 'output',
+      type: 'output',
+      data: {
+        text: '{{write.output}}',
+        image: '{{image.output}}'
+      }
+    }
+  ],
+  edges: [
+    { source: 'input', target: 'research' },
+    { source: 'research', target: 'write' },
+    { source: 'input', target: 'image' },
+    { source: 'write', target: 'output' },
+    { source: 'image', target: 'output' }
+  ]
+};
+```
+
+### API Usage
+
+OnlyMakeAI provides a REST API for programmatic access:
+
+#### Authentication
+
+```bash
+curl -X POST https://api.onlymakeai.com/v1/auth/login \
+  -H "Content-Type: application/json" \
+  -d '{"email":"user@example.com","password":"your_password"}'
+```
+
+#### Generate Text
+
+```bash
+curl -X POST https://api.onlymakeai.com/v1/generate/text \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "prompt": "Write a haiku about coding",
+    "model": "gpt-4",
+    "maxTokens": 100
+  }'
+```
+
+#### Execute Workflow
+
+```bash
+curl -X POST https://api.onlymakeai.com/v1/workflows/:id/execute \
+  -H "Authorization: Bearer YOUR_API_KEY" \
+  -H "Content-Type: application/json" \
+  -d '{
+    "inputs": {
+      "topic": "Machine Learning Basics"
+    }
+  }'
+```
+
+---
+
+## 📁 Project Structure
+
+```
+onlymakeai/
+├── app/                      # Next.js App Router
+│   ├── (auth)/              # Authentication routes
+│   ├── (dashboard)/         # Dashboard routes
+│   ├── api/                 # API routes
+│   ├── layout.tsx           # Root layout
+│   └── page.tsx             # Landing page
+├── components/              # React components
+│   ├── ui/                  # UI components
+│   ├── workflow/            # Workflow builder
+│   ├── chat/                # Chat interface
+│   └── ...                  # Other components
+├── lib/                     # Utility functions
+│   ├── ai/                  # AI provider integrations
+│   ├── db/                  # Database utilities
+│   ├── auth/                # Authentication helpers
+│   └── utils/               # General utilities
+├── hooks/                   # Custom React hooks
+├── types/                   # TypeScript type definitions
+├── public/                  # Static assets
+├── supabase/               # Supabase configuration
+│   ├── migrations/          # Database migrations
+│   └── seed.sql            # Seed data
+├── tests/                   # Test files
+├── .env.example            # Environment variables template
+├── next.config.js          # Next.js configuration
+├── tailwind.config.ts      # Tailwind CSS configuration
+├── tsconfig.json           # TypeScript configuration
+└── package.json            # Dependencies
+```
+
+---
+
+## 📚 API Documentation
+
+### Base URL
+
+```
+https://api.onlymakeai.com/v1
+```
+
+### Authentication
+
+All API requests require authentication using an API key:
+
+```
+Authorization: Bearer YOUR_API_KEY
+```
+
+### Endpoints
+
+#### Text Generation
+
+**POST** `/generate/text`
+
+```json
+{
+  "prompt": "string",
+  "model": "gpt-4 | gpt-4-turbo | claude-3-opus",
+  "maxTokens": 1000,
+  "temperature": 0.7,
+  "systemPrompt": "optional string"
+}
+```
+
+#### Image Generation
+
+**POST** `/generate/image`
+
+```json
+{
+  "prompt": "string",
+  "model": "dall-e-3 | stable-diffusion-xl",
+  "size": "1024x1024 | 1024x1792 | 1792x1024",
+  "quality": "standard | hd",
+  "style": "vivid | natural"
+}
+```
+
+#### Workflow Execution
+
+**POST** `/workflows/:id/execute`
+
+```json
+{
+  "inputs": {
+    "key": "value"
+  },
+  "async": false
+}
+```
+
+#### Projects
+
+- **GET** `/projects` - List all projects
+- **POST** `/projects` - Create new project
+- **GET** `/projects/:id` - Get project details
+- **PUT** `/projects/:id` - Update project
+- **DELETE** `/projects/:id` - Delete project
+
+For complete API documentation, visit: `https://docs.onlymakeai.com/api`
+
+---
+
+## 🔧 Development
+
+### Running Tests
+
+```bash
+# Run all tests
+npm test
+
+# Run tests in watch mode
+npm test:watch
+
+# Run tests with coverage
+npm test:coverage
+
+# Run E2E tests
+npm test:e2e
+```
+
+### Code Quality
+
+```bash
+# Lint code
+npm run lint
+
+# Format code
+npm run format
+
+# Type check
+npm run type-check
+```
+
+### Database Management
+
+```bash
+# Create new migration
+supabase migration new migration_name
+
+# Apply migrations
+supabase db reset
+
+# Generate TypeScript types
+supabase gen types typescript --local > types/database.ts
+```
+
+### Local Development Tips
+
+1. **Hot Reload**: Changes are automatically reflected
+2. **Debug Mode**: Set `NODE_ENV=development` for detailed logs
+3. **Mock AI**: Use `AI_MOCK_MODE=true` to avoid API costs during development
+4. **Database Viewer**: Use Supabase Studio at `http://localhost:54323`
+
+---
+
+## 🚀 Deployment
+
+### Deploy to Vercel
+
+1. **Connect Repository**:
+   ```bash
+   vercel
+   ```
+
+2. **Configure Environment Variables** in Vercel dashboard
+
+3. **Deploy**:
+   ```bash
+   vercel --prod
+   ```
+
+### Deploy with Docker
+
+```bash
+# Build image
+docker build -t onlymakeai .
+
+# Run container
+docker run -p 3000:3000 --env-file .env.local onlymakeai
+```
+
+### Environment-Specific Configuration
+
+#### Production
+- Enable caching and optimization
+- Configure CDN for static assets
+- Set up monitoring and alerts
+- Enable rate limiting
+- Configure backup strategies
+
+#### Staging
+- Mirror production setup
+- Use separate database
+- Enable detailed logging
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions! Please follow these guidelines:
+
+### Getting Started
+
+1. Fork the repository
+2. Create a feature branch: `git checkout -b feature/amazing-feature`
+3. Make your changes
+4. Write or update tests
+5. Commit your changes: `git commit -m 'Add amazing feature'`
+6. Push to the branch: `git push origin feature/amazing-feature`
+7. Open a Pull Request
+
+### Code Style
+
+- Follow TypeScript best practices
+- Use functional components with hooks
+- Write meaningful commit messages
+- Add comments for complex logic
+- Update documentation as needed
+
+### Pull Request Process
+
+1. Ensure all tests pass
+2. Update README if needed
+3. Add description of changes
+4. Request review from maintainers
+5. Address review feedback
+
+### Reporting Issues
+
+When reporting issues, please include:
+
+- Clear description of the problem
+- Steps to reproduce
+- Expected vs actual behavior
+- Screenshots (if applicable)
+- Environment details (OS, browser, etc.)
+
+---
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+```
+MIT License
+
+Copyright (c) 2024 OnlyMakeAI
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+```
+
+---
+
+## 🔗 Links
+
+- **Website**: [https://onlymakeai.com](https://onlymakeai.com)
+- **Documentation**: [https://docs.onlymakeai.com](https://docs.onlymakeai.com)
+- **Discord**: [Join our community](https://discord.gg/onlymakeai)
+- **Twitter**: [@onlymakeai](https://twitter.com/onlymakeai)
+- **Blog**: [https://blog.onlymakeai.com](https://blog.onlymakeai.com)
+
+---
+
+## 🙏 Acknowledgments
+
+- [Next.js](https://nextjs.org/) - The React framework
+- [Supabase](https://supabase.com/) - Open source Firebase alternative
+- [Vercel](https://vercel.com/) - Deployment platform
+- [OpenAI](https://openai.com/) - AI models and APIs
+- [Anthropic](https://anthropic.com/) - Claude AI models
+- All our [contributors](https://github.com/onlymakeai/onlymakeai/graphs/contributors)
+
+---
+
+## 📞 Support
+
+Need help? We're here for you:
+
+- 📧 Email: support@onlymakeai.com
+- 💬 Discord: [Join our server](https://discord.gg/onlymakeai)
+- 📖 Docs: [docs.onlymakeai.com](https://docs.onlymakeai.com)
+- 🐛 Issues: [GitHub Issues](https://github.com/onlymakeai/onlymakeai/issues)
+
+---
+
+<div align="center">
+  <p>Made with ❤️ by the OnlyMakeAI Team</p>
+  <p>
+    <a href="https://github.com/onlymakeai/onlymakeai">⭐ Star us on GitHub</a> |
+    <a href="https://twitter.com/onlymakeai">🐦 Follow on Twitter</a> |
+    <a href="https://discord.gg/onlymakeai">💬 Join Discord</a>
+  </p>
+</div>
